@@ -1,1 +1,1 @@
-# Códigos das aulas de Estrutura de Dados
+# Repositório para a matéria de Estrutura de Dados
