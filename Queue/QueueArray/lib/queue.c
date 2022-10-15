@@ -9,7 +9,7 @@ void initializeQueue(QUEUE* pq){
     pq->size = 0;
 }
 
-//Incere no final da fila
+//Insere no final da fila
 void enqueue(QUEUE* pq, ITEM item){
     if(pq->size == SIZE){
         printf("Queue is full!!\n");

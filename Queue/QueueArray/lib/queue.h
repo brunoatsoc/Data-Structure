@@ -4,7 +4,7 @@
 
 #include "item.h"
 
-#define SIZE 5
+#define SIZE 100
 #define TRUE 1
 #define FALSE 0
 
