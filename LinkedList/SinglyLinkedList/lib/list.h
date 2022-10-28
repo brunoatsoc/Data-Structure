@@ -7,13 +7,13 @@
 
 #include "item.h"
 
-//Estrutura para o primeiro nó da lista
+//Estrutura para o primeiro nó
 typedef struct list{
     int size;//Tamanho da lista
     struct node* head;//Ponteiro para o primeiro nó
 }LIST;
 
-//Estrutura para o link dos nós
+//Estrutura para o nó
 typedef struct node{
     ITEM data;//Tipo de dado do nó
     struct node* next;//Ponteiro para o proximo nó
@@ -30,5 +30,7 @@ ITEM removeFront(LIST* lst);
 ITEM removeRear(LIST* lst);
 ITEM removeInPosition(LIST* lst, int position);
 int validPosition(LIST* lst, int position);
+ITEM searchAndRemove(LIST* lst, ITEM i);
+NODE* searchItem(NODE* node, ITEM i);
 
 #endif

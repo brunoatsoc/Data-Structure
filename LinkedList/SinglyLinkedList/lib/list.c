@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include  <stdlib.h>
+#include <stdlib.h>
 #include "list.h"
 
 //Inicializa lista
@@ -104,7 +104,7 @@ int isEmpty(LIST* lst){
     return FALSE;
 }
 
-//Remove do inicio da lista
+//Remove do início da lista
 ITEM removeFront(LIST* lst){
     if(isEmpty(lst)){
         printf("Error in removeFront, list is empty!!\n");
@@ -146,7 +146,7 @@ ITEM removeRear(LIST* lst){
     return i;
 }
 
-//Remove um item de uma posição especifica
+//Remove o item de uma posição especifica da lista
 ITEM removeInPosition(LIST* lst, int position){
     if(isEmpty(lst)){
         printf("Error in removeInPosition, list is empty!!\n");
@@ -182,4 +182,32 @@ int validPosition(LIST* lst, int position){
         return TRUE;
     }
     return FALSE;
+}
+
+//Procura um item e o remove da lista
+ITEM searchAndRemove(LIST* lst, ITEM i){
+    ITEM temp;
+    if(lst->head->data.iValue == i.iValue){
+        temp = lst->head->data;
+        removeFront(lst);
+    }else{
+        NODE* node = searchItem(lst->head, i);
+        NODE* aux = node->next;
+
+        temp = node->next->data;
+        node->next = aux->next;
+        free(aux);
+    }
+    return temp;
+}
+
+//Procura um item na lista e retorna um ponteiro para ele
+NODE* searchItem(NODE* node, ITEM i){
+    if(node->next == NULL){
+        printf("Error in searchItem, item could not be found!!\n");
+        exit(-1);
+    }if(node->next->data.iValue == i.iValue){
+        return node;
+    }
+    return searchItem(node->next, i);
 }
