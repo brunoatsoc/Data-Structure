@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "item.h"
 
-//Imprime um elemento da lista(int, double ou char)
+//Imprime um elemento da lista pode ser(int, double ou char)
 void printItem(ITEM item){
     switch(item.eType){
         case 1:
