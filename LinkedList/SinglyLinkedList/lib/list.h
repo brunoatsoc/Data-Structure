@@ -30,7 +30,12 @@ ITEM removeFront(LIST* lst);
 ITEM removeRear(LIST* lst);
 ITEM removeInPosition(LIST* lst, int position);
 int validPosition(LIST* lst, int position);
-ITEM searchAndRemove(LIST* lst, ITEM i);
-NODE* searchItem(NODE* node, ITEM i);
+ITEM searchAndRemoveInt(LIST* lst, ITEM i);
+NODE* searchItemInt(NODE* node, ITEM i);
+ITEM searchAndRemoveDouble(LIST* lst, ITEM i);
+NODE* searchItemDouble(NODE* node, ITEM i);
+ITEM searchAndRemoveString(LIST* lst, ITEM i);
+NODE* searchItemString(NODE* node, ITEM i);
+ITEM removeItem(LIST* lst, ITEM item);
 
 #endif

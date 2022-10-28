@@ -184,14 +184,14 @@ int validPosition(LIST* lst, int position){
     return FALSE;
 }
 
-//Procura um item e o remove da lista
-ITEM searchAndRemove(LIST* lst, ITEM i){
+//Procura um item inteiro e o remove da lista
+ITEM searchAndRemoveInt(LIST* lst, ITEM i){
     ITEM temp;
     if(lst->head->data.iValue == i.iValue){
         temp = lst->head->data;
         removeFront(lst);
     }else{
-        NODE* node = searchItem(lst->head, i);
+        NODE* node = searchItemInt(lst->head, i);
         NODE* aux = node->next;
 
         temp = node->next->data;
@@ -201,13 +201,84 @@ ITEM searchAndRemove(LIST* lst, ITEM i){
     return temp;
 }
 
-//Procura um item na lista e retorna um ponteiro para ele
-NODE* searchItem(NODE* node, ITEM i){
+//Procura um nó que contem um inteiro na lista e retorna um ponteiro para ele
+NODE* searchItemInt(NODE* node, ITEM i){
     if(node->next == NULL){
         printf("Error in searchItem, item could not be found!!\n");
         exit(-1);
     }if(node->next->data.iValue == i.iValue){
         return node;
     }
-    return searchItem(node->next, i);
+    return searchItemInt(node->next, i);
+}
+
+//Procura um item double e o remove da lista
+ITEM searchAndRemoveDouble(LIST* lst, ITEM i){
+    ITEM temp;
+    if(lst->head->data.dValue == i.dValue){
+        temp = lst->head->data;
+        removeFront(lst);
+    }else{
+        NODE* node = searchItemDouble(lst->head, i);
+        NODE* aux = node->next;
+
+        temp = node->next->data;
+        node->next = aux->next;
+        free(aux);
+    }
+    return temp;
+}
+
+//Procura um nó que contem um double na lista e retorna um ponteiro para ele
+NODE* searchItemDouble(NODE* node, ITEM i){
+    if(node->next == NULL){
+        printf("Error in searchItem, item could not be found!!\n");
+        exit(-1);
+    }if(node->next->data.dValue == i.dValue){
+        return node;
+    }
+    return searchItemDouble(node->next, i);
+}
+
+//Procura um item char* e o remove da lista
+ITEM searchAndRemoveString(LIST* lst, ITEM i){
+    ITEM temp;
+    if(lst->head->data.sValue == i.sValue){
+        temp = lst->head->data;
+        removeFront(lst);
+    }else{
+        NODE* node = searchItemString(lst->head, i);
+        NODE* aux = node->next;
+
+        temp = node->next->data;
+        node->next = aux->next;
+        free(aux);
+    }
+    return temp;
+}
+
+//Procura um nó que contem um char* na lista e retorna um ponteiro para ele
+NODE* searchItemString(NODE* node, ITEM i){
+    if(node->next == NULL){
+        printf("Error in searchItem, item could not be found!!\n");
+        exit(-1);
+    }if(node->next->data.sValue == i.sValue){
+        return node;
+    }
+    return searchItemString(node->next, i);
+}
+
+//Remove intens do tipo int, double e string
+ITEM removeItem(LIST* lst, ITEM item){
+    switch(item.eType){
+        case IS_INT:
+            return searchAndRemoveInt(lst, item);
+            break;
+        case IS_DOUBLE:
+            return searchAndRemoveDouble(lst, item);
+            break;
+        case IS_STRING:
+            return searchAndRemoveString(lst, item);
+            break;
+    }
 }

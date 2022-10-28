@@ -8,28 +8,29 @@ int main(void){
 
     initializeList(&l);
 
-    printf("%d\n", isEmpty(&l));
-
     i.eType = IS_INT;
-    i.iValue = 10;
+    i.iValue = 192;
     insertFront(&l, i);
 
-    i.eType = IS_INT;
-    i.iValue = 2;
+    i.eType = IS_DOUBLE;
+    i.dValue = 12.34;
     insertFront(&l, i);
 
-    i.eType = IS_INT;
-    i.iValue = 5;
+    i.eType = IS_STRING;
+    i.sValue = "Bruno Santos Costa";
     insertFront(&l, i);
+
+    i.eType = IS_STRING;
+    i.sValue = "OI OI OI";
+    insertAfterPosition(&l, i, 3);
 
     printList(&l);
 
-    //printItem(removeInPosition(&l, 3));
-    removeInPosition(&l, 1);
+    i.eType = IS_STRING;
+    i.sValue = "Bruno Santos Costa";
+    removeItem(&l, i);
 
     printList(&l);
-
-    printf("%d\n", isEmpty(&l));
 
     return 0;
 }
