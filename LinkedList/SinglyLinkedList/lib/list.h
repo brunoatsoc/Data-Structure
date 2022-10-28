@@ -7,13 +7,13 @@
 
 #include "item.h"
 
-//Estrutura para o primeiro nó
+//Estrutura para o primeiro nó da lista
 typedef struct list{
     int size;//Tamanho da lista
     struct node* head;//Ponteiro para o primeiro nó
 }LIST;
 
-//Estrutura para o nó
+//Estrutura para o link dos nós
 typedef struct node{
     ITEM data;//Tipo de dado do nó
     struct node* next;//Ponteiro para o proximo nó
