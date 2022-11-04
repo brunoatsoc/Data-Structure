@@ -19,12 +19,7 @@ void insertFront(LIST* lst, ITEM i){
 
     newNode->data = i;
     newNode->next = lst->head;
-
-    if(lst->head == NULL){
-        lst->head = newNode;
-    }else{
-        lst->head = newNode;
-    }
+    lst->head = newNode;
     ++(lst->size);
 }
 
