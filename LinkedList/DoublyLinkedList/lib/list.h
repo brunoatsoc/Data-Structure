@@ -7,16 +7,18 @@
 #define TRUE 1
 #define FALSE 0
 
+//Estrutura para os nós da lista
 typedef struct node{
-    ITEM data;
-    struct node* next;
-    struct node* prev;
+    ITEM data; //Tipo de dado ITEM(int, double ou char/string)
+    struct node* next; //Ponteiro para o proximo nó
+    struct node* prev; //Ponteiro para o nó anterior
 }NODE;
 
+//Estrutura para a lista
 typedef struct list{
-    int size;
-    struct node* head;
-    struct node* tail;
+    int size; //Variavel para marcar o tamanho da lista
+    struct node* head; //Ponteiro para o primeiro nó da lista
+    struct node* tail; //Ponteiro para o ultimo nó da lista
 }LIST;
 
 void initializeList(LIST* lst);

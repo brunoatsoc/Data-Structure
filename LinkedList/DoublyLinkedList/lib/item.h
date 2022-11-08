@@ -6,6 +6,7 @@
 #define IS_DOUBLE 2
 #define IS_STRING 3
 
+//Estrutura para o tipo ITEM(int, double ou char/string)
 typedef struct item{
     int eType;
 
