@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "item.h"
 
-//Imprime dados do tipo ITEM
+//Imprime dados do tipo ITEM(int, double, char/string)
 void printItem(ITEM i){
     switch(i.eType){
         case IS_INT:
