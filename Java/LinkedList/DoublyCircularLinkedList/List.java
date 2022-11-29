@@ -209,10 +209,10 @@ public class List{
     //Imprime um nó da lista
     private void printNode(Node node, Node lastNode){
         if(node.next == lastNode){
-            System.out.println(node.data.getAge() + "\n" + node.data.getName());
+            System.out.println(node.data.toString());
             return;
         }
-        System.out.println(node.data.getAge() + "\n" + node.data.getName());
+        System.out.println(node.data.toString());
         printNode(node.next, lastNode);
     }
 }
