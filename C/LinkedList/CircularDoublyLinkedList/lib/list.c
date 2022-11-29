@@ -74,8 +74,8 @@ void insertRear(LIST* lst, ITEM i){
     NODE* newNode = createNode(newNode, i);
 
     if(lst->head == NULL){
-        lst->head == newNode;
-        lst->tail == newNode;
+        lst->head = newNode;
+        lst->tail = newNode;
         newNode->next = lst->head;
         newNode->prev = lst->tail;
     }
