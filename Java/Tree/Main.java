@@ -13,6 +13,9 @@ public class Main{
         p.setInfo(27, "Lusca");
         t.setTree(p);
 
-        t.printTreeAll();
+        Person pessoa = new Person(22, "Bruno");
+        System.out.println(t.findNode(pessoa, t.getRoot()).data.toString());
+
+        //t.printTreeAll();
     }
 }

@@ -4,14 +4,20 @@ public class Main{
         Person p = new Person(22, "Bruno");
 
         l.insertRear(p);
-        l.setRear(15, "Fernanda");
-        l.setRear(21, "Ana");
-        l.setRear(24, "Fabiana");
-        l.setRear(18, "Levi");
-        l.setRear(30, "Julia");
-        l.setRear(25, "Laura");
-        l.setRear(24, "Brisa");
-        l.setInPosition(19, "Paula", 7);
+        p.setInfo(22, "Klaus");
+        l.setRear(p);
+        p.setInfo(18, "Kakau");
+        l.setRear(p);
+        p.setInfo(18, "Coito");
+        l.setRear(p);
+        p.setInfo(19, "Flávia");
+        l.setRear(p);
+        p.setInfo(18, "Luiz");
+        l.setRear(p);
+        p.setInfo(20, "Pedro");
+        l.setRear(p);
+        p.setInfo(19, "Valter");
+        l.setRear(p);
 
         /*l.removeFront();
         l.removeFront();

@@ -16,20 +16,20 @@ public class List{
     }
 
     //Seta um objeto na frente da lista
-    public void setFront(int age, String nome){
-        Person p = new Person(age, nome);
+    public void setFront(Person i){
+        Person p = new Person(i.getAge(), i.getName());
         insertFront(p);
     }
 
     //Seta um objeto no final da lista
-    public void setRear(int age, String nome){
-        Person p = new Person(age, nome);
+    public void setRear(Person i){
+        Person p = new Person(i.getAge(), i.getName());
         insertRear(p);
     }
 
     //Seta um objeto em uma posição especifica da lista
-    public void setInPosition(int age, String nome, int position){
-        Person p = new Person(age, nome);
+    public void setInPosition(Person i, int position){
+        Person p = new Person(i.getAge(), i.getName());
         insertInPosition(p, position);
     }
 

@@ -23,4 +23,14 @@ public class Person{
     public String toString(){
         return "Person data\nAge: " + age + "\nName: " + name + "\n";
     }
+
+    public boolean isEqual(Person p){
+        if(this.age == p.getAge()){
+            if(this.name == p.getName()){
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
 }
