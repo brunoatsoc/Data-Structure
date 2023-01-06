@@ -8,6 +8,11 @@ public class Stack<T extends Comparable<T>> extends List<T>{
         setRearList(data);
     }//Fim push
 
+    //Retorna o tamanho da pilha
+    public int stackSize(){
+        return getSizeList();
+    }//Fim stackSize
+
     //Retorna verdadeiro se a pilha estiver vazia
     public boolean isEmpty(){
         if(getSizeList() == 0){

@@ -5,10 +5,10 @@ public class Q6{
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
         String ES;
-        int[] placa = new int[10];
+        Car[] c = new Car[10];
         int p;
-        Stack<Integer> s = new Stack<Integer>();
-        Stack<Integer> s1 = new Stack<Integer>();
+        Stack<Car> s = new Stack<Car>();
+        Stack<Car> s1 = new Stack<Car>();
 
         for(int i = 0; i < 10;){
             System.out.printf("Entrada ou Saida[E/S]: ");
@@ -16,7 +16,8 @@ public class Q6{
             
             if(ES.equals("E")){
                 System.out.printf("Digite a placa do carro: ");
-                placa[i] = input.nextInt();
+                c[i] = new Car();
+                c[i].setPlaca(input.nextInt());
                 input.nextLine();
                 ++i;
             }else{
@@ -24,29 +25,45 @@ public class Q6{
                 p = input.nextInt();
                 input.nextLine();
 
-                for(int j = 0; j < i; j++){
-                    Integer var;
+                int j;
+                int pos = 0;
+                for(j = 0; j < i; j++){
+                    Car var;
 
-                    if(placa[j] != p){
-                        var = placa[j];
-                        s.push(var);
+                    if(c[j].getPlaca() != p){
+                        if(s.stackSize() > 0){
+                            if(c[j].getPlaca() == -1){
+                                c[j].setManobra(0);
+                            }else{
+                                c[j].setManobra(1);
+                            }
+
+                            var = c[j];
+                            s.push(var);
+                        }else{
+                            pos++;
+                        }
                     }else{
-                        placa[j] = -1;
-                        var = placa[j];
+                        Car ca = new Car();
+                        ca.setPlaca(-1);
+                        c[j] = ca;
+                        var = c[j];
                         s.push(var);
                     }
                 }
 
-                for(int j = 0; j < i; j++){
+                for(int k = pos + 1; k < j; k++){
                     s1.push(s.pop());
                 }
+                s.pop();
 
-                for(int j = 0; j < i; j++){
-                    placa[j] = s1.pop();
+                for(int k = pos + 1; k < j; k++){
+                    c[k] = s1.pop();
                 }
+                System.out.println(s1.stackSize());
 
-                for(int j = 0; j < i; j++){
-                    System.out.println(placa[j]);
+                for(int k = 0; k < i; k++){
+                    System.out.println(c[k]);
                 }
             }
         }
