@@ -56,7 +56,7 @@ public class Tree<T extends Comparable<T>>{
             newNode.father = node;
             return;
         }else{
-            if(i.compareTo(node.left.data) == -1){
+            if(i.compareTo(node.left.data) <= 0){
                 insertLeft(node.left, i);
             }else if(i.compareTo(node.left.data) == 1){
                 insertRight(node.left, i);
@@ -74,7 +74,7 @@ public class Tree<T extends Comparable<T>>{
             newNode.father = node;
             return;
         }else{
-            if(i.compareTo(node.right.data) == 1){
+            if(i.compareTo(node.right.data) >= 0){
                 insertRight(node.right, i);
             }else if(i.compareTo(node.right.data) == -1){
                 insertLeft(node.right, i);
@@ -126,7 +126,7 @@ public class Tree<T extends Comparable<T>>{
             return false;
         }
  
-        return isComplete(root.left, 2 * index + 1, nNodes) && isComplete(root.right, 2 * index + 2, nNodes);
+        return isComplete(root.left, (2 * index) + 1, nNodes) && isComplete(root.right, (2 * index) + 2, nNodes);
     }//Fim isComplete
 
     //Verifica se é um MaxHeap

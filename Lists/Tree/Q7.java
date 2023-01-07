@@ -2,18 +2,22 @@ import java.util.Arrays;
 
 public class Q7{
     public static void main(String[] args){
-        int[] var  = {2, 0, 8, 4, 1};
-
-        heapfy(var, 5, 2);
+        int[] var  = {6, 12, 5, 0, 2, 14, 10, 8};
+    
+        heapfy(var, var.length, 1);
 
         System.out.println(Arrays.toString(var));
     }
 
     public static void heapfy(int[] arr, int size, int type){
         if(type == 1){
-            heapfyMax(arr, size, 0);
+            for(int i = size / 2 - 1; i >= 0; i--){
+                heapfyMax(arr, size, i);
+            }
         }else{
-            heapfyMin(arr, size, 0);
+            for(int i = size / 2 - 1; i >= 0; i--){
+                heapfyMin(arr, size, i);
+            }
         }
     }
 

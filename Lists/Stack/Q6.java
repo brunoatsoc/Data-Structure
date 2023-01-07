@@ -60,7 +60,6 @@ public class Q6{
                 for(int k = pos + 1; k < j; k++){
                     c[k] = s1.pop();
                 }
-                System.out.println(s1.stackSize());
 
                 for(int k = 0; k < i; k++){
                     System.out.println(c[k]);
