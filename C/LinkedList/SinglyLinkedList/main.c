@@ -10,15 +10,15 @@ int main(void){
 
     i.eType = IS_INT;
     i.iValue = 192;
-    insertFront(&l, i);
+    insertRear(&l, i);
 
     i.eType = IS_DOUBLE;
     i.dValue = 12.34;
-    insertFront(&l, i);
+    insertRear(&l, i);
 
     i.eType = IS_STRING;
     i.sValue = "Bruno Santos Costa";
-    insertFront(&l, i);
+    insertRear(&l, i);
 
     i.eType = IS_STRING;
     i.sValue = "OI OI OI";
@@ -26,11 +26,17 @@ int main(void){
 
     printList(&l);
 
-    i.eType = IS_STRING;
+    removeRear(&l);
+    removeRear(&l);
+    removeRear(&l);
+    removeRear(&l);
+
+    printList(&l);
+    /*i.eType = IS_STRING;
     i.sValue = "Bruno Santos Costa";
     removeItem(&l, i);
 
-    printList(&l);
+    printList(&l);*/
 
     return 0;
 }
